@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="jcss/style.css">
+</head>
+<body>
+    <div class="window-controls">
+        <img src="assets/minimize.svg" alt="Minimize" class="window-control" id="minimize">
+        <img src="assets/close.svg" alt="Close" class="window-control" id="close">
+    </div>
+
+    <div class="game-container">
+        <div id="start-screen" class="screen active">
+            <img src="assets/start.svg" alt="Start Screen" class="start-image">
+            <div class="start-buttons">
+                <img src="assets/startbut.svg" alt="Start Game" class="nav-btn" id="start-game">
+                <img src="assets/startbut.svg" alt="How to Play" class="nav-btn" id="how-to-play">
+                <img src="assets/startbut.svg" alt="Settings" class="nav-btn" id="settings">
+                <img src="assets/startbut.svg" alt="About" class="nav-btn" id="about">
+            </div>
+        </div>
+
+        <div id="mode-screen" class="screen">
+            <div class="mode-selection">
+                <div class="mode-option">
+                    <img src="assets/single.svg" alt="Single Player" class="mode-btn">
+                    <div class="mode-overlay" id="single-player"></div>
+                </div>
+                <div class="mode-option">
+                    <img src="assets/multi.svg" alt="Multi Player" class="mode-btn">
+                    <div class="mode-overlay" id="multi-player"></div>
+                </div>
+            </div>
+            <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="mode-return-home">
+        </div>
+
+        <div id="how-to-play-screen" class="screen">
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <p>1. Choose between Single Player or Multi Player mode</p>
+                <p>2. Players take turns placing X and O on the board</p>
+                <p>3. First player to get 3 in a row (horizontally, vertically, or diagonally) wins!</p>
+                <p>4. If all spaces are filled with no winner, it's a draw</p>
+            </div>
+            <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="instructions-return-home">
+        </div>
+
+        <div id="settings-screen" class="screen">
+            <div class="settings">
+                <h2>Settings</h2>
+                <div class="setting-option">
+                    <label>Sound Effects</label>
+                    <input type="checkbox" id="sound-effects" checked>
+                </div>
+                <div class="setting-option">
+                    <label>Music</label>
+                    <input type="checkbox" id="music" checked>
+                </div>
+                <div class="setting-option">
+                    <label>Difficulty (Single Player)</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+            <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="settings-return-home">
+        </div>
+
+        <div id="about-screen" class="screen">
+            <div class="about">
+                <h2>About</h2>
+                <p>Version 1.0.0</p>
+                <p>Created with Electron</p>
+                <p>© 2024 Tic Tac Toe</p>
+            </div>
+            <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="about-return-home">
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-board">
+                <img src="assets/gameboard.svg" alt="Game Board" class="board-image">
+                <div class="board-cells">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+            </div>
+            <div class="game-controls">
+                <img src="assets/replay.svg" alt="Replay" class="control-btn" id="replay">
+                <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="return-home">
+            </div>
+        </div>
+
+        <div id="win-screen" class="screen">
+            <img src="" alt="Win State" class="win-image" id="win-image">
+            <img src="assets/replay.svg" alt="Play Again" class="control-btn" id="play-again">
+            <img src="assets/return-home.svg" alt="Return Home" class="control-btn" id="win-return-home">
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

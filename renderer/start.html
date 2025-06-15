@@ -1,0 +1,32 @@
+const fs = require('fs');
+const path = require('path');
+
+fs.writeFileSync(
+  path.join(__dirname, 'renderer', 'start.html'),
+  `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Start</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="window-controls">
+    <img src="../assets/minimize.svg" id="minimize" class="icon-btn">
+    <img src="../assets/close.svg" id="close" class="icon-btn">
+  </div>
+  <div class="start-screen">
+    <img src="../assets/start.svg" alt="Start Logo" class="logo">
+    <img src="../assets/startbut.svg" alt="Start Button" id="start-btn" class="start-button">
+  </div>
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('minimize').onclick = () => ipcRenderer.send('minimize');
+    document.getElementById('close').onclick = () => ipcRenderer.send('close');
+    document.getElementById('start-btn').onclick = () => ipcRenderer.send('navigate', 'mode');
+  </script>
+</body>
+</html>`
+);

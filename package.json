@@ -1,0 +1,14 @@
+{
+  "name": "tictactoe-electron",
+  "version": "1.0.0",
+  "description": "A Tic Tac Toe game built with Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  }
+}

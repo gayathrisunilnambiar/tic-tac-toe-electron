@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Player - Tic Tac Toe</title>
+    <link rel="stylesheet" href="../jcss/style.css">
+</head>
+<body>
+    <div class="window-controls">
+        <img src="../assets/minimize.svg" alt="Minimize" class="window-control" id="minimize">
+        <img src="../assets/close.svg" alt="Close" class="window-control" id="close">
+    </div>
+
+    <div class="game-container">
+        <div class="game-board">
+            <img src="../assets/gameboard.svg" alt="Game Board" class="board-image">
+            <div class="board-cells">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+        </div>
+        <div class="game-controls">
+            <img src="../assets/replay.svg" alt="Replay" class="control-btn" id="replay">
+            <img src="../assets/return-home.svg" alt="Return Home" class="control-btn" id="return-home">
+        </div>
+    </div>
+
+    <div id="win-screen" class="screen">
+        <img src="" alt="Win State" class="win-image" id="win-image">
+        <img src="../assets/replay.svg" alt="Play Again" class="control-btn" id="play-again">
+        <img src="../assets/return-home.svg" alt="Return Home" class="control-btn" id="win-return-home">
+    </div>
+
+    <script src="../js/multiplayer.js"></script>
+</body>
+</html>

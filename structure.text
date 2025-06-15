@@ -1,0 +1,34 @@
+electron-tictactoe/
+├── main.js                     # Electron main process (entry point)
+├── preload.js                  # (Optional) Secure preload script for renderer access
+├── package.json                # Project metadata and scripts
+├── index.html                  # Launcher (redirects to start screen)
+│
+├── renderer/                   # All frontend files
+│   ├── start.html              # Start screen (Let's Play + Start button)
+│   ├── mode.html               # Mode selection screen (Single / Multi)
+│   ├── game.html               # Main game screen
+│   ├── win.html                # Generic win/draw screen (customized by JS)
+│
+│   ├── js/
+│   │   ├── start.js            # Handles Start button → mode.html
+│   │   ├── mode.js             # Handles mode selection → game.html
+│   │   ├── game.js             # Game logic: board, timer, AI moves
+│   │   ├── ai.js               # JS port of minimax, best_move, worst_move, winner check
+│   │   ├── win.js              # Replay/Home buttons, result display
+│   │
+│   └── css/
+│       └── style.css           # Shared styles for all pages
+│
+├── assets/                     # Exported Figma assets (PNG/SVG)
+│   ├── board.png
+│   ├── x.png
+│   ├── o.png
+│   ├── start-btn.png
+│   ├── background.png
+│   ├── robot-left.png
+│   ├── robot-right.png
+│   └── ...
+│
+└── utils/
+    └── state.js                # (Optional) JS file to track game state across screens

@@ -1,0 +1,31 @@
+fs.writeFileSync(
+  path.join(__dirname, 'renderer', 'mode.html'),
+  `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Mode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="window-controls">
+    <img src="../assets/minimize.svg" id="minimize" class="icon-btn">
+    <img src="../assets/close.svg" id="close" class="icon-btn">
+  </div>
+  <div class="mode-screen">
+    <img src="../assets/start.svg" alt="Start Logo" class="logo">
+    <img src="../assets/single.svg" alt="Single Player" id="single-btn" class="mode-button">
+    <img src="../assets/multi.svg" alt="Multiplayer" id="multi-btn" class="mode-button">
+  </div>
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('minimize').onclick = () => ipcRenderer.send('minimize');
+    document.getElementById('close').onclick = () => ipcRenderer.send('close');
+    document.getElementById('single-btn').onclick = () => ipcRenderer.send('navigate', 'singleplayer');
+    document.getElementById('multi-btn').onclick = () => ipcRenderer.send('navigate', 'multiplayer');
+  </script>
+</body>
+</html>`
+);
